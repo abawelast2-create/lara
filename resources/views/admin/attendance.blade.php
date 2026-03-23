@@ -84,8 +84,8 @@
         @forelse($attendances as $att)
             <tr>
                 <td>{{ $att->id }}</td>
-                <td><strong>{{ $att->employee->name ?? '-' }}</strong></td>
-                <td style="font-size:.78rem">{{ $att->employee->branch->name ?? '-' }}</td>
+                <td><strong>{{ $att->employee?->name ?? '-' }}</strong></td>
+                <td style="font-size:.78rem">{{ $att->employee?->branch?->name ?? '-' }}</td>
                 <td>
                     @php
                     $typeMap = ['in'=>['دخول','badge-green'], 'out'=>['انصراف','badge-red'],
