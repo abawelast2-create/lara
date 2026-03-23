@@ -41,10 +41,10 @@
         <tbody>
         @forelse($summary as $item)
             <tr>
-                <td><strong>{{ $item->name }}</strong></td>
-                <td style="font-size:.78rem">{{ $item->branch_name ?? '-' }}</td>
+                <td><strong>{{ $item->employee?->name ?? '-' }}</strong></td>
+                <td style="font-size:.78rem">{{ $item->employee?->branch?->name ?? '-' }}</td>
                 <td>{{ $item->late_count }}</td>
-                <td>{{ $item->total_late_minutes }} دقيقة</td>
+                <td>{{ $item->total_late }} دقيقة</td>
                 <td>
                     @if($item->late_count <= 2)
                         <span class="badge badge-green">ممتاز</span>
